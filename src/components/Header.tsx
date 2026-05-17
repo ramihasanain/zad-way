@@ -29,7 +29,7 @@ export const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <div className="w-auto md:w-1/4 flex justify-start">
-          <Link href="/" className="text-2xl font-bold tracking-wider text-white">
+          <Link href="/" className="text-3xl font-normal tracking-wider text-white font-lust">
             ZAD<span className="text-gold-400">WAY</span>
           </Link>
         </div>
