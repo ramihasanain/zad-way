@@ -28,7 +28,7 @@ export const Services = () => {
             <h3 className="text-3xl font-bold text-white mb-6">
               {t.visionMission.visionTitle}
             </h3>
-            <p className="text-ocean-100/80 leading-relaxed text-lg">
+            <p className="text-ocean-100/80 leading-relaxed text-lg drop-cap">
               {t.visionMission.visionDesc}
             </p>
           </motion.div>
@@ -46,7 +46,7 @@ export const Services = () => {
             <h3 className="text-3xl font-bold text-white mb-6">
               {t.visionMission.missionTitle}
             </h3>
-            <p className="text-ocean-100/80 leading-relaxed text-lg">
+            <p className="text-ocean-100/80 leading-relaxed text-lg drop-cap">
               {t.visionMission.missionDesc}
             </p>
           </motion.div>

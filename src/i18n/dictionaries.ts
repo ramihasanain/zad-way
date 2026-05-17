@@ -27,7 +27,7 @@ export const dictionaries = {
     advantage: {
       title: "Our Strategic Advantage",
       intro: "Our fish, tuna and sardine industry possesses several competitive advantages that make it stand out compared to those in many other countries.",
-      location: "Oman’s prime coastal location connects the Arabian Sea and Indian Ocean, providing year-round access to the world's richest fishing waters. This strategic advantage allows us to offer buyers:",
+      location: "Connecting the Arabian Sea and the Indian Ocean, Oman's 3,000-kilometer coastline provides year-round access to some of the world's richest and most pristine fishing waters. Because the vast majority of Omani seafood is harvested using artisanal methods rather than industrial trawling, its exceptional freshness and quality remain unmatched.\n\nThis strategic advantage allows us to offer buyers:",
       points: [
         { title: "Superior quality", desc: "Catches are sustainably harvested and handled to meet rigorous international export standards." },
         { title: "Reliability", desc: "Consistent supply chains ensure dependable, year-round inventory." },

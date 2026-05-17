@@ -25,8 +25,8 @@ export const About = () => {
               {t.about.title}
             </h2>
             <div className="space-y-6 text-ocean-100/90 leading-relaxed text-lg mb-10">
-              <p>{t.about.description}</p>
-              <p>{t.about.network}</p>
+              <p className="drop-cap">{t.about.description}</p>
+              <p className="drop-cap">{t.about.network}</p>
             </div>
             <div className="relative h-64 sm:h-80 w-full rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <img 
@@ -48,8 +48,8 @@ export const About = () => {
             <h3 className="text-2xl font-bold mb-4 text-white">
               {t.advantage.title}
             </h3>
-            <p className="text-sm text-ocean-200 mb-6">{t.advantage.intro}</p>
-            <p className="text-sm text-ocean-200 mb-8">{t.advantage.location}</p>
+            <p className="text-sm text-ocean-200 mb-6 drop-cap">{t.advantage.intro}</p>
+            <p className="text-sm text-ocean-200 mb-8 whitespace-pre-line drop-cap">{t.advantage.location}</p>
             
             <div className="space-y-6">
               {t.advantage.points.map((point, idx) => {
