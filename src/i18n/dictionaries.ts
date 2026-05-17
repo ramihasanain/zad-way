@@ -9,7 +9,7 @@ export const dictionaries = {
     },
     hero: {
       title: "Zad Way",
-      subtitle: "Premium Seafood Export & Import",
+      subtitle: "Your Premium Seafood Export-Import Business Partner",
       description: "Delivering the world's richest fishing waters directly to your business.",
       cta: "Explore Our Products",
     },
@@ -62,8 +62,8 @@ export const dictionaries = {
       contact: "اتصل بنا",
     },
     hero: {
-      title: "زاد واي (Zad Way)",
-      subtitle: "استيراد وتصدير المأكولات البحرية الفاخرة",
+      title: "Zad Way",
+      subtitle: "شريكك التجاري لاستيراد وتصدير المأكولات البحرية الفاخرة",
       description: "نوفر لك أفضل المنتجات البحرية من أغنى المياه في العالم مباشرة إلى أعمالك.",
       cta: "اكتشف منتجاتنا",
     },

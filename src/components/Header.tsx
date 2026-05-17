@@ -26,34 +26,37 @@ export const Header = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold tracking-wider text-white">
-          ZAD<span className="text-gold-400">WAY</span>
-        </Link>
+        <div className="w-auto md:w-1/4 flex justify-start">
+          <Link href="/" className="text-2xl font-bold tracking-wider text-white">
+            ZAD<span className="text-gold-400">WAY</span>
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex md:w-2/4 justify-center items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="text-sm font-medium text-white/80 hover:text-gold-400 transition-colors">
+            <a key={link.name} href={link.href} className="text-sm font-medium text-white/80 hover:text-gold-400 transition-colors whitespace-nowrap">
               {link.name}
             </a>
           ))}
+        </nav>
+
+        {/* Mobile Menu Toggle & Language Button */}
+        <div className="w-auto md:w-1/4 flex justify-end items-center gap-4">
           <button 
             onClick={toggleLang}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium"
+            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium whitespace-nowrap"
           >
             <Globe size={16} className="text-gold-400" />
             {lang === 'en' ? 'العربية' : 'English'}
           </button>
-        </nav>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          <button onClick={toggleLang} className="p-2 text-white">
+          <button onClick={toggleLang} className="md:hidden p-2 text-white">
             <Globe size={20} className="text-gold-400" />
           </button>
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-white">
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
