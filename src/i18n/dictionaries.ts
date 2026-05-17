@@ -20,7 +20,7 @@ export const dictionaries = {
     },
     visionMission: {
       visionTitle: "Our Vision",
-      visionDesc: "Our Vision is to redefine canned food by delivering safe, high-quality, and budget-friendly products with unmatched efficiency. We connect global clients with reliable sourcing, international shipping, and quality-certified sea food solutions.",
+      visionDesc: "To redefine canned food by delivering safe, high-quality, and budget-friendly products with unmatched efficiency. We connect global clients with reliable sourcing, international shipping, and quality-certified sea food solutions.",
       missionTitle: "Our Mission",
       missionDesc: "We integrate trusted sourcing, strict quality control, and efficient logistics to guarantee dependable supply and total customer satisfaction, strictly adhering to the highest safety and packaging standards.",
     },
