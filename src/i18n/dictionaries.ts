@@ -40,8 +40,8 @@ export const dictionaries = {
     },
     contact: {
       title: "Contact Us",
-      omanOffice: "Oman - Muscat Office:\n+968 7177 0020",
-      jordanOffice: "Jordan - Amman Office:\n+962 7958 10706",
+      omanOffice: "Oman - Muscat Office:\n+96871770020",
+      jordanOffice: "Jordan - Amman Office:\n+962795810706",
       infoEmail: "Info@Zadway.com",
       salesEmail: "Sales@Zadway.com",
       form: {
@@ -94,8 +94,8 @@ export const dictionaries = {
     },
     contact: {
       title: "اتصل بنا",
-      omanOffice: "عُمان - مكتب مسقط:\n+968 7177 0020",
-      jordanOffice: "الأردن - مكتب عمان:\n+962 7958 10706",
+      omanOffice: "عُمان - مكتب مسقط:\n+96871770020",
+      jordanOffice: "الأردن - مكتب عمان:\n+962795810706",
       infoEmail: "Info@Zadway.com",
       salesEmail: "Sales@Zadway.com",
       form: {
