@@ -22,10 +22,10 @@
   }
 
   .drop-cap::first-letter {
-    @apply text-5xl font-bold text-gold-400 float-left mr-3 mt-2 leading-none;
+    @apply text-6xl font-bold text-gold-400 float-left mr-2 mt-1 mb-[-0.5rem] leading-[0.8];
   }
 
   html[dir="rtl"] .drop-cap::first-letter {
-    @apply float-right ml-3 mr-0 mt-0;
+    @apply float-right ml-2 mr-0;
   }
 }
