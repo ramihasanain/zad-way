@@ -39,14 +39,20 @@ export const Contact = () => {
               <div className="w-14 h-14 bg-ocean-800 rounded-full flex items-center justify-center flex-shrink-0 text-gold-400 shadow-inner">
                 <MapPin size={24} />
               </div>
-              <p className="text-ocean-100 font-medium text-lg leading-relaxed" dir="ltr">{t.contact.omanOffice}</p>
+              <div className="flex flex-col items-start">
+                <span className="text-ocean-100 font-medium text-lg leading-relaxed">{t.contact.omanOffice.split('\n')[0]}</span>
+                <span className="text-ocean-100 font-medium text-lg leading-relaxed" dir="ltr">{t.contact.omanOffice.split('\n')[1]}</span>
+              </div>
             </div>
 
             <div className="glass p-6 rounded-2xl flex items-center gap-6 border-l-4 border-l-ocean-500">
               <div className="w-14 h-14 bg-ocean-800 rounded-full flex items-center justify-center flex-shrink-0 text-ocean-400 shadow-inner">
                 <MapPin size={24} />
               </div>
-              <p className="text-ocean-100 font-medium text-lg leading-relaxed" dir="ltr">{t.contact.jordanOffice}</p>
+              <div className="flex flex-col items-start">
+                <span className="text-ocean-100 font-medium text-lg leading-relaxed">{t.contact.jordanOffice.split('\n')[0]}</span>
+                <span className="text-ocean-100 font-medium text-lg leading-relaxed" dir="ltr">{t.contact.jordanOffice.split('\n')[1]}</span>
+              </div>
             </div>
 
             <div className="glass p-6 rounded-2xl flex items-center gap-6">
