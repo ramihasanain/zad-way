@@ -41,9 +41,9 @@ export const dictionaries = {
     contact: {
       title: "Contact Us",
       omanOffice: "Oman - Muscat Office:\n+96871770020",
-      jordanOffice: "Jordan - Amman Office:\n+962795810706",
-      infoEmail: "Info@Zadway.com",
-      salesEmail: "Sales@Zadway.com",
+      jordanOffice: "Jordan - Amman Office:\n+962796810706",
+      infoEmail: "info@zad-way.com",
+      salesEmail: "sales@zad-way.com",
       form: {
         name: "Full Name",
         email: "Email Address",
@@ -95,9 +95,9 @@ export const dictionaries = {
     contact: {
       title: "اتصل بنا",
       omanOffice: "عُمان - مكتب مسقط:\n+96871770020",
-      jordanOffice: "الأردن - مكتب عمان:\n+962795810706",
-      infoEmail: "Info@Zadway.com",
-      salesEmail: "Sales@Zadway.com",
+      jordanOffice: "الأردن - مكتب عمان:\n+962796810706",
+      infoEmail: "info@zad-way.com",
+      salesEmail: "sales@zad-way.com",
       form: {
         name: "الاسم الكامل",
         email: "البريد الإلكتروني",
