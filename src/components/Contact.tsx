@@ -1,12 +1,38 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
+import { toast } from 'sonner';
 
 export const Contact = () => {
   const { t } = useLanguage();
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error();
+      toast.success('Message sent! We\'ll get back to you soon.');
+      setForm({ name: '', email: '', subject: '', message: '' });
+    } catch {
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="py-24 relative bg-ocean-950 overflow-hidden">
@@ -77,30 +103,42 @@ export const Contact = () => {
             viewport={{ once: true }}
             className="lg:col-span-3 glass p-8 md:p-10 rounded-3xl border-t border-white/10 shadow-2xl"
           >
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm text-ocean-200 font-medium">{t.contact.form.name}</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="name"
+                    value={form.name}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-ocean-900/50 border border-ocean-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm text-ocean-200 font-medium">{t.contact.form.email}</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
                     className="w-full bg-ocean-900/50 border border-ocean-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label className="text-sm text-ocean-200 font-medium">{t.contact.form.subject}</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
+                  name="subject"
+                  value={form.subject}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-ocean-900/50 border border-ocean-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all"
                   placeholder="Inquiry about..."
                 />
@@ -108,18 +146,23 @@ export const Contact = () => {
 
               <div className="space-y-2">
                 <label className="text-sm text-ocean-200 font-medium">{t.contact.form.message}</label>
-                <textarea 
+                <textarea
                   rows={4}
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-ocean-900/50 border border-ocean-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all resize-none"
                   placeholder="Hello..."
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-4 bg-gold-500 hover:bg-gold-400 text-ocean-900 font-bold rounded-xl transition-all hover:scale-[1.02] shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2"
+                disabled={loading}
+                className="w-full sm:w-auto px-8 py-4 bg-gold-500 hover:bg-gold-400 disabled:opacity-60 disabled:cursor-not-allowed text-ocean-900 font-bold rounded-xl transition-all hover:scale-[1.02] shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2"
               >
-                <span>{t.contact.form.send}</span>
+                <span>{loading ? 'Sending...' : t.contact.form.send}</span>
                 <Send size={18} />
               </button>
             </form>

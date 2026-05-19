@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Cairo } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const cairo = Cairo({ subsets: ["arabic"], variable: '--font-cairo' });
@@ -23,6 +24,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
